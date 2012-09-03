@@ -44,4 +44,10 @@ end
 
 def rps_tournament_winner(tournament)
   # YOUR CODE HERE
+  legal_moves = ["R", "P", "S"]
+  if legal_moves.include?(tournament[0])
+    winner = rps_game_winner(tournament)
+    return winner
+  else
+    return rps_tournament_winner(tournament[0], tournament[1])        
 end
