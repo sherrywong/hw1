@@ -10,17 +10,17 @@ def rps_result(m1, m2)
   if player1_move == player2_move
     winner = player1
     return winner
-  else-if player1_move == "R"
+  elsif player1_move == "R"
     if player2_move == "S"
       winner = player1
     else
       winner = player2
-  else-if player1_move == "S"
+  elsif player1_move == "S"
     if player2_move == "R"
       winner = player2
     else 
       winner = player1
-  else-if player1_move = "P"
+  elsif player1_move = "P"
     if player2_move == "R"
       winner = player1
     else
