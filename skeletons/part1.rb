@@ -10,8 +10,9 @@ end
 
 def count_words(str)
   # YOUR CODE HERE
-  hash = {}
+  hash = Hash.new(0)
   str.each do |word|
     hash[word] += 1
   end
+  hash
 end
