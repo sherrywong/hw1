@@ -15,16 +15,19 @@ def rps_result(m1, m2)
       winner = player1
     else
       winner = player2
+    end
   elsif player1_move == "S"
     if player2_move == "R"
       winner = player2
     else 
       winner = player1
-  elsif player1_move = "P"
+    end
+  else 
     if player2_move == "R"
       winner = player1
     else
       winner = player2
+    end
   end
   winner
 end
@@ -50,4 +53,5 @@ def rps_tournament_winner(tournament)
     return winner
   else
     return rps_tournament_winner(tournament[0], tournament[1])        
+  end
 end
