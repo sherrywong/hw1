@@ -11,5 +11,7 @@ def combine_anagrams(words)
  end
  result = []
  hash.each do |key, value|
- result << value
+  result << value 
+ end
+ result
 end
