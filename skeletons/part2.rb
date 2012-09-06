@@ -15,20 +15,26 @@ def rps_result(m1, m2)
   elsif player1_move == "R"
     if player2_move == "S"
       winner = player1
+      return winner
     else
       winner = player2
+      return winner
     end
   elsif player1_move == "S"
     if player2_move == "R"
       winner = player2
+      return winner
     else 
       winner = player1
+      return winner
     end
   else 
     if player2_move == "R"
       winner = player1
+      return winner
     else
       winner = player2
+      return winner
     end
   end
   winner
@@ -53,8 +59,8 @@ def rps_tournament_winner(tournament)
   finalist2 = nil
   legal_moves = ["R", "P", "S"]
   if legal_moves.include?(tournament[0])
-    winner = rps_result(tournament[0], tournament[1])
-    return winner
+    finalist1 = tournament[0]
+    finalist2 = tournament[1]
   else
     finalist1 = rps_tournament_winner(tournament[0])
     finalist1 = rps_tournament_winner(tournament[1])        
