@@ -2,7 +2,7 @@ def combine_anagrams(words)
  # YOUR CODE HERE
  hash = Hash.new()
  words.each do |word|
-  sorted_word = word.sort.downcase
+  sorted_word = word.downcase.chars.sort.join
   if hash[sorted_word] != nil
    hash[sorted_word] << word
   else
