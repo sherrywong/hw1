@@ -5,6 +5,8 @@ class Dessert
     @calories = calories
   end
   
+  attr_accessor :@name, @calories
+  
   def healthy?
     # YOUR CODE HERE
     if @calories < 200
@@ -16,7 +18,7 @@ class Dessert
   
   def delicious?
     # YOUR CODE HERE
-    true
+    return true
   end
 end
 
@@ -27,6 +29,8 @@ class JellyBean < Dessert
     @calories = calories
     @flavor = flavor
   end
+  
+  attr_accessor :@flavor
   
   def delicious?
     # YOUR CODE HERE
