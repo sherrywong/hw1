@@ -3,6 +3,8 @@ class NoSuchStrategyError < StandardError ; end
 
 def rps_result(m1, m2)
   # YOUR CODE HERE
+  player1 = m1
+  player2 = m2
   player1_move = m1[1]
   player2_move = m2[1]
   winner = 'none'
@@ -47,11 +49,15 @@ end
 
 def rps_tournament_winner(tournament)
   # YOUR CODE HERE
+  finalist1 = nil
+  finalist2 = nil
   legal_moves = ["R", "P", "S"]
   if legal_moves.include?(tournament[0])
-    winner = rps_game_winner(tournament)
+    winner = rps_result(tournament[0], tournament[1])
     return winner
   else
-    return rps_tournament_winner(tournament[0], tournament[1])        
+    finalist1 = rps_tournament_winner(tournament[0])
+    finalist1 = rps_tournament_winner(tournament[1])        
   end
+  rps_result(finalist1, finalist2)
 end
