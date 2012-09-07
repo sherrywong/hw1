@@ -1,20 +1,23 @@
 class Numeric
   @@currencies = {'yen' => 0.013, 'euro' => 1.292, 'rupee' => 0.019, 'dollar' => 1.000}
-  def method_missing(method_id)
-    puts method_id.to_s
-    singular_currency = method_id.to_s.gsub( /s$/, '')
-    if @@currencies.has_key?(singular_currency)
-      self * @@currencies[singular_currency]
-    #the 'in(:currency) method
-    elsif singular_currency.include?('in')
-      currency = method_id.to_s.gsub(/[(]/, '')
-      currency = currency.to_s.gsub(/[)]/, '')
-      singular_currency = currency.to_s.gsub(/s$/, '')
-      rate = 1 / @@currencies[singular_currency]
-      self * rate
-    else
-      super    
+  def method_missing(*arguments)
+    money = 0.0
+    arguments.each do |method_id|
+     singular_currency = method_id.to_s.gsub( /s$/, '')
+      if @@currencies.has_key?(singular_currency)
+        money = self * @@currencies[singular_currency]
+      else
+        super    
+      end
     end
+    return money
+  end
+  
+  def in(currency)
+    singular_currency = currency.to_s.gsub(/s$/, '')
+      if @@currencies.has_key?(singular_currency)
+        self / @@currencies[singular_currency]
+      end
   end
 end
 
