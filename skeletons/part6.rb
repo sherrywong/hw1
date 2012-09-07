@@ -23,27 +23,6 @@ end
 
 class String
   # YOUR CODE HERE
-#  def palindrome?
-#    if self.casecmp(self.reverse.downcase) == 0 then
-#      return true
-#    else
-#      return false
-#    end
-#  end
-  def method_missing(method_id)
-    if method_id == 'palindrome?'
-      self.send(:palindrome?, self)
-    end
-  end
-end
-
-module Enumerable
-  # YOUR CODE HERE
-  def palindrome?
-      self.send(:palindrome?, self.to_s)
-  end
-endclass String
-  # YOUR CODE HERE
   def palindrome?
     if self.casecmp(self.reverse.downcase) == 0 then
       return true
