@@ -10,7 +10,7 @@ class CartesianProduct
   
   def each
     if @collection1.empty? or @collection2.empty?
-      yield []
+      return
     else
       for i in 0..collection1.length-1
         for j in 0..collection2.length-1
