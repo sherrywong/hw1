@@ -2,7 +2,7 @@ def palindrome?(str)
   # YOUR CODE HERE
   str = str.reverse.downcase.
   #get rid of spaces, nonwords, punctuations
-  gsub(/[\s \W \p{Pc}]/, '')
+  gsub(/[\W \p{Pc}]/, '')
   str_reverse = str.reverse.downcase.
   #get rid of spaces, nonwords, punctuations
   gsub(/[\s \W \p{Pc}]/, '')
