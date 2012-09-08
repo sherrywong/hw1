@@ -4,17 +4,15 @@ class Class
     attr_reader attr_name        # create the attribute's getter
     attr_reader attr_name+"_history" # create bar_history getter
     history = attr_name+'_history'
-   
-    #Retrun [nil] when no values assigned?
+
     class_eval %Q{
-                  def #{attr_name}=(val) 
-                    @#{attr_name} = val 
-                    if @#{history}.nil? then 
-                      @#{history} = [nil, val] 
+                  def #{attr_name}=(val)
+                    @#{attr_name} = val
+                    if @#{history}.nil? then
+                      @#{history} = [nil, val]
                     else
-                      @#{history} << val 
+                      @#{history} << val
                     end
-                  end
-                   } 
+                  end}
   end
 end
