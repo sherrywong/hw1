@@ -5,7 +5,7 @@ class Numeric
   #  arguments.each do |method_id|
      singular_currency = method_id.to_s.gsub( /s$/, '')
       if @@currencies.has_key?(singular_currency)
-  money = self * @@currencies[singular_currency]
+      money = self * @@currencies[singular_currency]
       else
         super
       end
@@ -16,7 +16,7 @@ class Numeric
   def in(currency)
     singular_currency = currency.to_s.gsub(/s$/, '')
       if @@currencies.has_key?(singular_currency)
-	self / @@currencies[singular_currency]
+      self / @@currencies[singular_currency]
       end
   end
 end
@@ -31,8 +31,7 @@ end
 module Enumerable
   # YOUR CODE HERE
   def palindrome?
-     enumereable_obj = self.to_a
-     enumerable_obj == enumerable_obj.reverse
+     self.to_a == self.to_a.reverse
   end
 end
 
