@@ -1,11 +1,7 @@
 def palindrome?(str)
   # YOUR CODE HERE
-  str = str.reverse.downcase.
-  #get rid of spaces, nonwords, punctuations
-  gsub(/[\W \p{Pc}]/, '')
-  str_reverse = str.reverse.downcase.
-  #get rid of spaces, nonwords, punctuations
-  gsub(/[\s \W \p{Pc}]/, '')
+  str = str.downcase.gsub(/\W/, '')
+  str_reverse = str.reverse
   if str_reverse == str then
     return true
   else
