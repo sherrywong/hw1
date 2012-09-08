@@ -65,16 +65,4 @@ def rps_tournament_winner(tournament)
     finalist2 = rps_tournament_winner(tournament[1])        
   end
   rps_result(finalist1, finalist2)
-enddef rps_tournament_winner(tournament)
-  # YOUR CODE HERE
-  finalist1 = nil
-  finalist2 = nil
-  legal_moves = ["R", "P", "S"]
-  if legal_moves.include?(tournament[0][1])
-    return rps_game_winner(tournament)
-  else
-    finalist1 = rps_tournament_winner(tournament[0])
-    finalist2 = rps_tournament_winner(tournament[1])        
-  end
-  rps_result(finalist1, finalist2)
 end
