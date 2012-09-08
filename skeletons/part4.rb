@@ -5,7 +5,7 @@ class Dessert
     @calories = calories
   end
   
-  attr_accessor :@name, @calories
+  attr_accessor :name, calories
   
   def healthy?
     # YOUR CODE HERE
@@ -30,7 +30,7 @@ class JellyBean < Dessert
     @flavor = flavor
   end
   
-  attr_accessor :@flavor
+  attr_accessor :flavor
   
   def delicious?
     # YOUR CODE HERE
